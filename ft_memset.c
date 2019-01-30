@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <string.h>
 
-char	*ft_memset(char *s1, int c, int size)
+void	*ft_memset(void *s, int c, int size)
 {
 	int i;
+	char *s1;
 
+	s1 = s;
 	i = 0;
 	while (size > 0)
 	{
@@ -20,8 +22,8 @@ int	main(void)
 	int size;
 	int c;
 
-	char s1[10] = "London";
+	char s[10] = "London";
 	c = 97;
-	size = 12;
-	printf("%s",ft_memset(s1, c, size));
+	size = 6;
+	printf("%s",ft_memset(s, c, size));
 }
