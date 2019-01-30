@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-char	*strrchr(char *src, char a)
+char	*ft_strrchr(char *src, char a)
 {
 	int i;
 
@@ -21,6 +21,6 @@ int	main(int argc, char **argv)
 	char a;
 
 	a = argv[2][0];
-	printf("%s", strrchr(argv[1], a));
+	printf("%s", ft_strrchr(argv[1], a));
 	return(0);
 }

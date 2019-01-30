@@ -25,9 +25,3 @@ int	ft_atoi(char *str)
 		return (num * sign);
 	return(0);
 }
-
-int	main(int argc, char **argv)
-{
-	printf("%d", ft_atoi(argv[1]));
-	return(0);
-}
