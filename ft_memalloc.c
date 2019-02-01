@@ -4,8 +4,12 @@
 void	*ft_memalloc(size_t size)
 {
 	char *newstr;
+	int i;
 
-	if(!(newstr = (char *)malloc(size_t + 1)))
+	i = 0;
+	if(!(newstr = (char *)malloc(sizeof(char) *(size + 1))))
 		return(NULL);
-	return(newstr);
+	while (newstr[i++])
+		newstr[i] = 0;
+	return(newstr[0]);
 }
