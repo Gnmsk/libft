@@ -7,7 +7,7 @@ void	*ft_memalloc(size_t size)
 	int i;
 
 	i = 0;
-	if(!(newstr = (char *)malloc(sizeof(char) *(size + 1))))
+	if(!(newstr = (char *)malloc(size)))
 		return(NULL);
 	while (newstr[i++])
 		newstr[i] = 0;
