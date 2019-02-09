@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strrchr(char *src, char a)
 {
@@ -13,14 +13,5 @@ char	*ft_strrchr(char *src, char a)
 		if (src[i] == a)
 			return(&src[i]);
 	}
-	return(0);
-}
-
-int	main(int argc, char **argv)
-{
-	char a;
-
-	a = argv[2][0];
-	printf("%s", ft_strrchr(argv[1], a));
 	return(0);
 }

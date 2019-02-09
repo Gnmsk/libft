@@ -1,4 +1,6 @@
-int	ft_strcmp(char *s1, char *s2, int len)
+#include "libft.h"
+
+int	ft_strncmp(char *s1, char *s2, int len)
 {
 	int i;
 
@@ -7,8 +9,8 @@ int	ft_strcmp(char *s1, char *s2, int len)
 	{
 		if (*s1 != *s2)
 			return (*s1 - *s2);
-		*s1++;
-		*s2++;
+		s1++;
+		s2++;
 		i++;
 	}
 	return (*s1 - *s2);

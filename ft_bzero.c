@@ -1,9 +1,8 @@
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	int i;
+	size_t i;
 	
 	i = 0;
 	while (i < n)
@@ -11,15 +10,4 @@ void	ft_bzero(void *s, size_t n)
 		((char *)s)[i] = 0;
 		i++;
 	}
-}
-
-int	main()
-{
-	int n;
-	char str[7] = "london";
-
-	n = 3;
-	ft_bzero(str, n);
-	printf("%s", str);
-	return(0);
 }

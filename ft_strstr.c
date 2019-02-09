@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strstr(char *stack, char *needle)
 {
@@ -22,12 +22,4 @@ char	*ft_strstr(char *stack, char *needle)
 		i++;;
 	}
 	return(NULL);
-}
-
-int	main(void)
-{
-	char s1[15] = "Bladerunner";
-	char s2[5] = "run";
-	printf("%s", ft_strstr(s1, s2));
-	return(0);
 }

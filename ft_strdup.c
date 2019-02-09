@@ -1,15 +1,4 @@
-#include <stdlib.h>
-#include <stdio.h>
-
-int	ft_strlen(char *str)
-{
-	int i;
-
-	i = 0;
-	while (*str++)
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strdup(char *src)
 {
@@ -28,13 +17,4 @@ char	*ft_strdup(char *src)
 		i++;
 	}
 	return (dest);
-}
-
-int	main(void)
-{
-	char *str;
-
-	str = "Moscow";
-	printf("%s", ft_strdup(str));
-	return (0);
 }

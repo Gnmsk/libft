@@ -1,7 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-int	strlcat(char *dest, char *src, int size)
+int	ft_strlcat(char *dest, char *src, int size)
 {
 	int i;
 	int j;
@@ -23,21 +22,4 @@ int	strlcat(char *dest, char *src, int size)
 	while (src[j])
 		j++;
 	return(i + j);
-}
-
-int	main(int argc, char **argv)
-{
-	int n;
-
-	n = 10;
-	char *dest;
-	dest = argv[1];
-	char *src;
-	src = argv[2];
-
-//	printf("%d", slen(dest));
-//	printf("%ld", sizeof(dest));
-	printf("%d",strlcat(dest, src, n));
-	printf("%s", dest);
-	return(0);
 }

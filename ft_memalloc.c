@@ -1,5 +1,4 @@
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memalloc(size_t size)
 {
@@ -11,5 +10,5 @@ void	*ft_memalloc(size_t size)
 		return(NULL);
 	while (newstr[i++])
 		newstr[i] = 0;
-	return(newstr[0]);
+	return(newstr);
 }

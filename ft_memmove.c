@@ -1,12 +1,10 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char *d;
 	const unsigned char *s;
-	int i;
+	size_t i;
 
 	d = dest;
 	s = src;
@@ -28,16 +26,4 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		i++;
 	}
 	return(d);
-}
-
-int	main(int argc, char **argv)
-{
-	int n;
-	char *str;
-
-	n = atoi(argv[3]);
-	str = argv[1];
-	ft_memmove(str, argv[2], n);
-	printf("%s", str);
-	return(0);
 }

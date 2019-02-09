@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strnstr(char *stack, char *niddle, int len)
 {
@@ -21,14 +20,5 @@ char	*ft_strnstr(char *stack, char *niddle, int len)
 		}
 		i++;
 	}
-	return(0);
-}
-
-int	main(int argc, char **argv)
-{
-	int len;
-
-	len = atoi(argv[3]);
-	printf("%s", ft_strnstr(argv[1], argv[2], len));
 	return(0);
 }

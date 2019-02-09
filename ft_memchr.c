@@ -1,7 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-void *memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char *str;
 	int i;
@@ -16,15 +15,4 @@ void *memchr(const void *s, int c, size_t n)
 		i--;
 	}
 	return(NULL);
-}
-
-int	main(int argc, char **argv)
-{
-	int n;
-	int c;
-
-	c = (int)argv[2][0];
-	n = atoi(argv[3]);
-	printf("%s", memchr(argv[1], c, n));
-	return(0);
 }

@@ -1,14 +1,15 @@
-NAME = libft
+NAME = libft.a
 SOURCE = ./ft_*.c
 OBJ = ./ft_*.o
 FLAG = -Wall -Wextra -Werror
+HEADER = ./libft.h
 
 all: $(NAME)
 
 $(NAME):
-	@ gcc -c $(FLAG) $(SOURCE)
+	@ gcc $(FLAG) $(HEADER) -c $(SOURCE)
 	@ ar rc $(NAME) $(OBJ)
-	@ run lib
+	@ ranlib $(NAME)
 clean:
 	@ rm -f $(OBJ)
 
