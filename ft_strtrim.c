@@ -1,49 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbruen <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/02/14 17:14:20 by dbruen            #+#    #+#             */
+/*   Updated: 2019/02/14 17:28:22 by dbruen           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
-
-int	ft_strlenn(char const *str)
-{
-	int i;
-
-	i = 0;
-	while (*str != '\0')
-	{
-		str++;
-		i++;
-	}
-	return(i);
-}
 
 char	*ft_strtrim(char const *s)
 {
-	char *ns;
-	int i;
-	int j;
-	int len;
+	char	*ns;
+	int		i;
+	int		j;
+	int		len;
 
 	i = 0;
 	j = 0;
-	len = ft_strlenn(s);
-	if(!(ns = (char *)malloc(len + 1)))
-		return(NULL);
-	while (s[j] == ' ' || s[j] == ',' || s[j] == '\t' || s[j] == '\n')
-		j++;
+	while (s[i] == ' ' || s[i] == ',' || s[i] == '\t' || s[i] == '\n')
+		i++;
+	if (s[i] == '\0')
+		return (NULL);
+	len = ft_strlen(s) - 1;
 	while (s[len] == ' ' || s[len] == ',' || s[len] == '\t' || s[len] == '\n')
 		len--;
-	while (j <= len)
+	if (!(ns = (char *)malloc(len - i + 2)))
+		return (NULL);
+	while (j < len - i + 1)
 	{
-		ns[i] = s[j];
+		ns[j] = s[i + j];
 		j++;
-		i++;
 	}
-	ns[i] = '\0';
-	return(ns);
-}
-
-int	main(int argc, char **argv)
-{
-	printf("%s", ft_strtrim(argv[1]));
-	return(0);
+	ns[j] = '\0';
+	return (ns);
 }
