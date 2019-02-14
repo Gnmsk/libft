@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbruen <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/02/14 16:04:28 by dbruen            #+#    #+#             */
+/*   Updated: 2019/02/14 16:05:56 by dbruen           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_strlcat(char *dest, char *src, int size)
@@ -8,18 +20,17 @@ int	ft_strlcat(char *dest, char *src, int size)
 
 	i = 0;
 	j = 0;
-
-	while (dest[i] != '\0')              // till dest exist
-		i++;                 // counting dest
-	k = i;                // rest free size 
-	while (src[j] && k < size)   // till src exist and enought place
+	while (dest[i] != '\0')
+		i++;
+	k = i;
+	while (src[j] && k < size)
 	{
-		dest[i + j] = src[j];// concatination
-		j++;                 // counting src
-		k++;                 // size reducing
+		dest[i + j] = src[j];
+		j++;
+		k++;
 	}
-	dest[k] = '\0';          // end
+	dest[k] = '\0';
 	while (src[j])
 		j++;
-	return(i + j);
+	return (i + j);
 }

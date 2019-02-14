@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbruen <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/02/14 16:16:30 by dbruen            #+#    #+#             */
+/*   Updated: 2019/02/14 16:17:16 by dbruen           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strstr(char *stack, char *needle)
@@ -16,10 +28,10 @@ char	*ft_strstr(char *stack, char *needle)
 			i++;
 			j++;
 			if (needle[j] == '\0')
-				return(&stack[r]);
+				return (&stack[r]);
 		}
 		j = 0;
-		i++;;
+		i++;
 	}
-	return(NULL);
+	return (NULL);
 }

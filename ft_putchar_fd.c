@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbruen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/14 16:01:48 by dbruen            #+#    #+#             */
-/*   Updated: 2019/02/14 16:01:50 by dbruen           ###   ########.fr       */
+/*   Created: 2019/02/14 15:32:35 by dbruen            #+#    #+#             */
+/*   Updated: 2019/02/14 15:33:53 by dbruen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(char *src, char a)
+void	ft_putchar_fd(char c, int fd)
 {
-	int i;
-
-	i = 0;
-	while (src[i] != '\0')
-	{
-		i++;
-		if (src[i] == a)
-			return (&src[i]);
-	}
-	return (0);
+	write(fd, &c, 1);
 }

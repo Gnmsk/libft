@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbruen <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/02/14 15:57:41 by dbruen            #+#    #+#             */
+/*   Updated: 2019/02/14 15:57:58 by dbruen           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strcat(char *dest, char *src)
@@ -6,9 +18,9 @@ char	*ft_strcat(char *dest, char *src)
 		dest++;
 	if (*dest == '\0')
 	{
-		while(*src)
+		while (*src)
 			*dest++ = *src++;
 	}
 	*dest = '\0';
-	return(dest);
+	return (dest);
 }

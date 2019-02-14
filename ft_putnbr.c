@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbruen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/14 16:01:48 by dbruen            #+#    #+#             */
-/*   Updated: 2019/02/14 16:01:50 by dbruen           ###   ########.fr       */
+/*   Created: 2019/02/14 16:25:43 by dbruen            #+#    #+#             */
+/*   Updated: 2019/02/14 16:51:57 by dbruen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(char *src, char a)
+void	ft_putnbr(int n)
 {
-	int i;
-
-	i = 0;
-	while (src[i] != '\0')
+	if (n == -2147483648)
+		ft_putstr("-2147483648");
+	else if (n < 0)
 	{
-		i++;
-		if (src[i] == a)
-			return (&src[i]);
+		ft_putchar('-');
+		ft_putnbr(-n);
 	}
-	return (0);
+	else if (n >= 10)
+	{
+		ft_putnbr(n / 10);
+		ft_putchar(n % 10 + '0');
+	}
+	else
+		ft_putchar(n + '0');
 }
