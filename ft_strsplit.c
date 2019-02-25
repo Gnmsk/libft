@@ -14,7 +14,21 @@
 #include <string.h>
 #include <stdio.h>
 
-static int	ft_words_count(char *s, char c)
+char    *ft_strncpy(char *dest, char const *src, int n)
+{
+        size_t i;
+
+        i = 0;
+        while (i < n && src[i])
+        {
+                dest[i] = src[i];
+                i++;
+        }
+        dest[i] = '\0';
+        return (dest);
+}
+
+static int	ft_words_count(char const *s, char c)
 {
 	size_t i;
 	size_t w;
@@ -34,37 +48,42 @@ static int	ft_words_count(char *s, char c)
 	return (w);
 }
 
-char	*ft_strdup(char *src)
+static char *ft_strndup(char const *src, size_t n)
 {
-	int		i;
-	int		len;
-	char	*dest;
+	char *str;
 
-	i = 0;
-	len = ft_strlen(src);
-	dest = ((char *)malloc(sizeof(char) * (len + 1)));
-	if (dest == NULL)
-		return (0);
-	while (i <= len)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	return (dest);
+	if (!(str = (char *)malloc(n + 1)))
+		return (NULL);
+	str = ft_strncpy(str, src, n);
+	str[n] = '\0';
+	return (str);
 }
 
 char **ft_strsplit(char const *s, char c)
 {
-	char **str; //str[w][l];
-
-	size_t w;
-	size_t l;
+	char **str;
 	size_t i;
-	size_t len;
+	size_t first;
+	size_t last;
 
-	len = ft_strlen(s);
-	if (!(str = (char **)malloc(w * sizeof(char *) + len)))
+	i = 0;
+	first = 0;
+	last = 0;
+	if (!(str = (char **)malloc(ft_words_count(s, c) * sizeof(char *) + 1)))
 		return (NULL);
+	while (s[last] != '\0')
+	{
+		while (s[last] == c)
+			last++;
+		while (s[last] && s[last] != c)
+			last++;
+		if (last > first)
+		{
+			str[i] = ft_strndup(s + first, last - first);
+			i++;
+		}
+	}
+	str[i] = '\0';
 	return (str);
 }
 
