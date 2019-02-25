@@ -9,24 +9,10 @@
 /*   Updated: 2019/02/14 17:01:03 by dbruen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include "libft.h"
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-
-char    *ft_strncpy(char *dest, char const *src, int n)
-{
-        size_t i;
-
-        i = 0;
-        while (i < n && src[i])
-        {
-                dest[i] = src[i];
-                i++;
-        }
-        dest[i] = '\0';
-        return (dest);
-}
 
 static int	ft_words_count(char const *s, char c)
 {
@@ -75,6 +61,7 @@ char **ft_strsplit(char const *s, char c)
 	{
 		while (s[last] == c)
 			last++;
+		first = last;
 		while (s[last] && s[last] != c)
 			last++;
 		if (last > first)
@@ -85,14 +72,4 @@ char **ft_strsplit(char const *s, char c)
 	}
 	str[i] = '\0';
 	return (str);
-}
-
-int	main(int argc, char **argv)
-{
-	char **str;
-
-	if (argc != 3)
-		return (printf("%s", "arguments error"));
-	str = ft_strsplit(argv[2], argv[3][0]);
-	return (0);
 }

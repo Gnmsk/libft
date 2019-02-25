@@ -44,7 +44,7 @@ void	ft_striter(char *s, void (*f)(char *));
 int		ft_strlcat(char *dest, char *src, int size);
 char	*ft_strncat(char *dest, char *src, int i);
 int		ft_strncmp(char *s1, char *s2, int len);
-char	*ft_strncpy(char *dest, char *src, int i);
+char	*ft_strncpy(char *dest, char const *src, int i);
 int		ft_strnequ(char const *s1, char const *s2, size_t n);
 char	*ft_strnew(size_t size);
 char	*ft_strnstr(char *stack, char *niddle, int len);
