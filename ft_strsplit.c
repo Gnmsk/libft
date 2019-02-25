@@ -6,18 +6,16 @@
 /*   By: dbruen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 17:00:52 by dbruen            #+#    #+#             */
-/*   Updated: 2019/02/14 17:01:03 by dbruen           ###   ########.fr       */
+/*   Updated: 2019/02/25 22:45:19 by dbruen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 
-static int	ft_words_count(char const *s, char c)
+#include "libft.h"
+
+static	int		ft_words_count(char const *s, char c)
 {
-	size_t i;
-	size_t w;
+	size_t	i;
+	size_t	w;
 
 	i = 0;
 	w = 0;
@@ -34,9 +32,9 @@ static int	ft_words_count(char const *s, char c)
 	return (w);
 }
 
-static char *ft_strndup(char const *src, size_t n)
+static	char	*ft_strndup(char const *src, size_t n)
 {
-	char *str;
+	char	*str;
 
 	if (!(str = (char *)malloc(n + 1)))
 		return (NULL);
@@ -45,12 +43,12 @@ static char *ft_strndup(char const *src, size_t n)
 	return (str);
 }
 
-char **ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
-	char **str;
-	size_t i;
-	size_t first;
-	size_t last;
+	char	**str;
+	size_t	i;
+	size_t	first;
+	size_t	last;
 
 	i = 0;
 	first = 0;
@@ -70,6 +68,6 @@ char **ft_strsplit(char const *s, char c)
 			i++;
 		}
 	}
-	str[i] = '\0';
+	str[i] = NULL;
 	return (str);
 }

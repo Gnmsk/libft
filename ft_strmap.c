@@ -6,7 +6,7 @@
 /*   By: dbruen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 17:00:04 by dbruen            #+#    #+#             */
-/*   Updated: 2019/02/14 17:00:17 by dbruen           ###   ########.fr       */
+/*   Updated: 2019/02/25 22:27:05 by dbruen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {
-	size_t i;
-	char *str;
+	size_t	i;
+	char	*str;
 
 	i = 0;
 	if (!(str = (char *)malloc((ft_strlen(s)) + 1)))
