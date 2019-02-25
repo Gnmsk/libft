@@ -14,45 +14,58 @@
 #include <string.h>
 #include <stdio.h>
 
-int	ft_strlen(const char *str)
+static int	ft_words_count(char *s, char c)
 {
-	int i;
+	size_t i;
+	size_t w;
 
 	i = 0;
-	while (*str++)
+	w = 0;
+	while (s[i])
 	{
+		if (s[i] && s[i] != c)
+		{
+			w++;
+			while (s[i] && s[i] != c)
+				i++;
+		}
 		i++;
 	}
-	return (i);
+	return (w);
 }
 
-char	*ft_strnew(size_t size)
+char	*ft_strdup(char *src)
 {
-	char	*newstr;
-	size_t	i;
+	int		i;
+	int		len;
+	char	*dest;
 
 	i = 0;
-	if (size + 1 < size)
-		return (NULL);
-	if (!(newstr = (char *)malloc(size + 1)))
-		return (NULL);
-	while (newstr[i])
+	len = ft_strlen(src);
+	dest = ((char *)malloc(sizeof(char) * (len + 1)));
+	if (dest == NULL)
+		return (0);
+	while (i <= len)
 	{
-		newstr[i] = 0;
+		dest[i] = src[i];
 		i++;
 	}
-	return (newstr);
+	return (dest);
 }
 
 char **ft_strsplit(char const *s, char c)
 {
-	size_t a;
-	size_t b;
-	size_t len;
-	char str[a][b];
+	char **str; //str[w][l];
 
-	a, b, len = 0;
-	while (
+	size_t w;
+	size_t l;
+	size_t i;
+	size_t len;
+
+	len = ft_strlen(s);
+	if (!(str = (char **)malloc(w * sizeof(char *) + len)))
+		return (NULL);
+	return (str);
 }
 
 int	main(int argc, char **argv)
@@ -61,6 +74,6 @@ int	main(int argc, char **argv)
 
 	if (argc != 3)
 		return (printf("%s", "arguments error"));
-	str = ft_strsplit(argv[2], argv[3]);
+	str = ft_strsplit(argv[2], argv[3][0]);
 	return (0);
 }
