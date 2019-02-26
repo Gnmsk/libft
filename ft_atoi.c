@@ -6,7 +6,7 @@
 /*   By: dbruen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 15:36:46 by dbruen            #+#    #+#             */
-/*   Updated: 2019/02/14 15:38:15 by dbruen           ###   ########.fr       */
+/*   Updated: 2019/02/26 19:29:15 by dbruen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(char const *str)
 {
-	int sign;
-	int num;
+	long long	sign;
+	long long	num;
 
 	num = 0;
 	sign = 1;
