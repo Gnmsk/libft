@@ -6,7 +6,7 @@
 /*   By: dbruen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 16:01:48 by dbruen            #+#    #+#             */
-/*   Updated: 2019/03/04 17:49:00 by dbruen           ###   ########.fr       */
+/*   Updated: 2019/03/05 17:26:58 by dbruen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@ char	*ft_strchr(char *src, char a)
 	int i;
 
 	i = 0;
-	while (src[i])
+	while (src[i] != '\0')
 	{
 		if (src[i] == a)
 			return (&src[i]);
 		i++;
 	}
-	return (0);
+	if (!a && src[i] == '\0')
+		return (&src[i]);
+	return (NULL);
 }
