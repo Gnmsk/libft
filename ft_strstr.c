@@ -6,7 +6,7 @@
 /*   By: dbruen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 16:16:30 by dbruen            #+#    #+#             */
-/*   Updated: 2019/03/05 18:15:57 by dbruen           ###   ########.fr       */
+/*   Updated: 2019/03/05 18:54:06 by dbruen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,18 @@ char	*ft_strstr(char *stack, char *needle)
 {
 	int i;
 	int j;
-	int r;
 
 	i = 0;
 	j = 0;
+	if (needle[j] == '\0')
+		return (stack);
 	while (stack[i] != '\0')
 	{
-		r = i;
-		while (stack[i] == needle[j])
+		while (stack[i + j] == needle[j])
 		{
-			i++;
 			j++;
 			if (needle[j] == '\0')
-				return (&stack[r]);
+				return (stack + i);
 		}
 		j = 0;
 		i++;
