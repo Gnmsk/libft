@@ -6,7 +6,7 @@
 /*   By: dbruen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 16:12:07 by dbruen            #+#    #+#             */
-/*   Updated: 2019/03/05 18:55:43 by dbruen           ###   ########.fr       */
+/*   Updated: 2019/03/05 21:20:33 by dbruen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strnstr(char const *stack, char const *niddle, size_t len)
 {
 	size_t i;
 	size_t j;
-	
+
 	i = 0;
 	j = 0;
 	if (niddle[j] == '\0' || len == 0)

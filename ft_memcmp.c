@@ -6,7 +6,7 @@
 /*   By: dbruen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 15:51:53 by dbruen            #+#    #+#             */
-/*   Updated: 2019/03/05 19:05:37 by dbruen           ###   ########.fr       */
+/*   Updated: 2019/03/05 21:19:48 by dbruen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	char	*c1;
 	char	*c2;
-	size_t				i;
+	size_t	i;
 
 	i = 0;
 	c1 = (char *)s1;
