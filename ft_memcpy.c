@@ -6,7 +6,7 @@
 /*   By: dbruen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 15:52:25 by dbruen            #+#    #+#             */
-/*   Updated: 2019/02/14 16:31:43 by dbruen           ###   ########.fr       */
+/*   Updated: 2019/03/05 16:40:22 by dbruen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memcpy(void *dest, void const *src, size_t n)
 	size_t i;
 
 	i = 0;
-	while (i < n && ((char *)dest)[i] != '\0')
+	while (i < n)
 	{
 		((char *)dest)[i] = ((char *)src)[i];
 		i++;

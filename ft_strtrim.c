@@ -6,7 +6,7 @@
 /*   By: dbruen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 17:14:20 by dbruen            #+#    #+#             */
-/*   Updated: 2019/02/14 17:28:22 by dbruen           ###   ########.fr       */
+/*   Updated: 2019/03/05 17:02:56 by dbruen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strtrim(char const *s)
 	while (s[i] == ' ' || s[i] == ',' || s[i] == '\t' || s[i] == '\n')
 		i++;
 	if (s[i] == '\0')
-		return (NULL);
+		return (ft_strcpy(ft_memalloc(2), ""));
 	len = ft_strlen(s) - 1;
 	while (s[len] == ' ' || s[len] == ',' || s[len] == '\t' || s[len] == '\n')
 		len--;
