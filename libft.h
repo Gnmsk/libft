@@ -6,7 +6,7 @@
 /*   By: dbruen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 17:29:26 by dbruen            #+#    #+#             */
-/*   Updated: 2019/03/07 21:47:52 by dbruen           ###   ########.fr       */
+/*   Updated: 2019/03/07 22:19:33 by dbruen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char			*ft_strcpy(char *dest, char *src);
 int				ft_strlen(char const *str);
 int				ft_strequ(char const *s1, char const *s2);
 void			ft_striter(char *s, void (*f)(char *));
-int				ft_strlcat(char *dest, char *src, size_t size);
+size_t			ft_strlcat(char *dest, char *src, size_t size);
 char			*ft_strncat(char *dest, char *src, int i);
 int				ft_strncmp(char *s1, char *s2, int len);
 char			*ft_strncpy(char *dest, char const *src, size_t n);
@@ -67,11 +67,13 @@ void			ft_putnbr(int n);
 void			ft_putendl(char const *s);
 void			ft_putendl_fd(char const *s, int fd);
 char			*ft_strtrim(char const *s);
+char			*ft_strjoin(char const *s1, char const *s2);
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 char			*ft_strmap(char const *s, char (*f)(char));
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char			**ft_strsplit(char const *s, char c);
 char			*ft_itoa(int n);
+void			ft_strdel(char **as);
 void			ft_memdel(void **ap);
 t_list			*ft_lstnew(void const *content, size_t content_size);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
