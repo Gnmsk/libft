@@ -6,7 +6,7 @@
 /*   By: dbruen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 17:00:52 by dbruen            #+#    #+#             */
-/*   Updated: 2019/02/25 22:45:19 by dbruen           ###   ########.fr       */
+/*   Updated: 2019/03/08 02:03:58 by dbruen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,28 +46,29 @@ static	char	*ft_strndup(char const *src, size_t n)
 char			**ft_strsplit(char const *s, char c)
 {
 	char	**str;
-	size_t	i;
 	size_t	first;
 	size_t	last;
 
-	i = 0;
-	first = 0;
-	last = 0;
-	if (!(str = (char **)malloc(ft_words_count(s, c) * sizeof(char *) + 1)))
-		return (NULL);
-	while (s[last] != '\0')
+	if (s)
 	{
-		while (s[last] == c)
-			last++;
-		first = last;
-		while (s[last] && s[last] != c)
-			last++;
-		if (last > first)
+		last = 0;
+		if (!(str = (char **)malloc(ft_words_count(s, c) * sizeof(char *) + 1)))
+			return (NULL);
+		while (s[last] != '\0')
 		{
-			str[i] = ft_strndup(s + first, last - first);
-			i++;
+			while (s[last] == c)
+				last++;
+			first = last;
+			while (s[last] && s[last] != c)
+				last++;
+			if (last > first)
+			{
+				*str = ft_strndup(s + first, last - first);
+				str++;
+			}
 		}
+		*str = NULL;
+		return (str);
 	}
-	str[i] = NULL;
-	return (str);
+	return (NULL);
 }
