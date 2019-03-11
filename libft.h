@@ -6,7 +6,7 @@
 /*   By: dbruen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 17:29:26 by dbruen            #+#    #+#             */
-/*   Updated: 2019/03/07 23:30:34 by dbruen           ###   ########.fr       */
+/*   Updated: 2019/03/11 18:56:43 by dbruen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int				ft_strncmp(char *s1, char *s2, size_t len);
 char			*ft_strncpy(char *dest, char const *src, size_t n);
 int				ft_strnequ(char const *s1, char const *s2, size_t n);
 char			*ft_strnew(size_t size);
-char			*ft_strdup(char *src);
+char			*ft_strdup(char const *src);
 char			*ft_strnstr(char const *stack, char const *niddle, size_t len);
 char			*ft_strrchr(char *src, char a);
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
@@ -75,6 +75,11 @@ char			**ft_strsplit(char const *s, char c);
 char			*ft_itoa(int n);
 void			ft_strdel(char **as);
 void			ft_memdel(void **ap);
+char			*ft_strrejoin(char *s1, char const *s2);
+void			ft_putstr_bf(char *str, int n);
+void			ft_swap(int *a, int *b);
+char			*ft_strndup(char const *src, size_t n);
+int				ft_words_count(char	const *s, char c);
 t_list			*ft_lstnew(void const *content, size_t content_size);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));

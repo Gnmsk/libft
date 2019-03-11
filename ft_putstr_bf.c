@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_bf.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbruen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/14 16:03:22 by dbruen            #+#    #+#             */
-/*   Updated: 2019/03/11 15:30:17 by dbruen           ###   ########.fr       */
+/*   Created: 2019/03/11 17:56:25 by dbruen            #+#    #+#             */
+/*   Updated: 2019/03/11 18:18:48 by dbruen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char const *src)
+void	ft_putstr_bf(char *str, int n)
 {
-	int		i;
-	int		len;
-	char	*dest;
+	static	char	buff[2000];
+	static	int		i;
 
 	i = 0;
-	len = ft_strlen(src);
-	dest = ((char *)malloc(sizeof(char) * (len + 1)));
-	if (dest == NULL)
-		return (0);
-	while (i <= len)
+	if (n == 1)
 	{
-		dest[i] = src[i];
-		i++;
+		write(1, &buff, i);
+		i = 0;
+		return ;
 	}
-	return (dest);
+	while (*str)
+	{
+		if (i == 1999)
+		{
+			write(1, &buff, i);
+			i = 0;
+		}
+		buff[i] = *str;
+		i++;
+		str++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: dbruen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 16:12:07 by dbruen            #+#    #+#             */
-/*   Updated: 2019/03/08 00:58:35 by dbruen           ###   ########.fr       */
+/*   Updated: 2019/03/11 17:16:15 by dbruen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ char	*ft_strnstr(char const *stack, char const *niddle, size_t len)
 
 	i = 0;
 	j = 0;
-	if (niddle[j] == '\0' || len == 0)
+	if (niddle[j] == '\0')
 		return ((char *)stack);
-	while (stack[i] != '\0' && i < len)
+	while (stack[i] != '\0' && (i + j) < len)
 	{
 		while (stack[i + j] == niddle[j] && (i + j) < len)
 		{

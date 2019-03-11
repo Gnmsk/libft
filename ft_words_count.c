@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_words_count.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbruen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/14 16:03:22 by dbruen            #+#    #+#             */
-/*   Updated: 2019/03/11 15:30:17 by dbruen           ###   ########.fr       */
+/*   Created: 2019/03/11 18:41:18 by dbruen            #+#    #+#             */
+/*   Updated: 2019/03/11 18:49:36 by dbruen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char const *src)
+int	ft_words_count(char const *s, char c)
 {
-	int		i;
-	int		len;
-	char	*dest;
+	size_t	i;
+	size_t	w;
 
 	i = 0;
-	len = ft_strlen(src);
-	dest = ((char *)malloc(sizeof(char) * (len + 1)));
-	if (dest == NULL)
-		return (0);
-	while (i <= len)
+	w = 0;
+	while (s[i])
 	{
-		dest[i] = src[i];
+		if (s[i] && s[i] != c)
+		{
+			w++;
+			while (s[i] && s[i] != c)
+				i++;
+			if (s[i] == '\0')
+				return (w);
+		}
 		i++;
 	}
-	return (dest);
+	return (w);
 }
