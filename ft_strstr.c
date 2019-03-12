@@ -12,22 +12,22 @@
 
 #include "libft.h"
 
-char	*ft_strstr(char *stack, char *needle)
+char	*ft_strstr(char const *stack, char const *needle)
 {
-	int i;
-	int j;
+	size_t i;
+	size_t j;
 
 	i = 0;
 	j = 0;
 	if (needle[j] == '\0')
-		return (stack);
+		return ((char *)stack);
 	while (stack[i] != '\0')
 	{
 		while (stack[i + j] == needle[j])
 		{
 			j++;
 			if (needle[j] == '\0')
-				return (stack + i);
+				return ((char *)stack + i);
 		}
 		j = 0;
 		i++;
